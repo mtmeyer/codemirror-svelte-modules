@@ -14,7 +14,7 @@ For all the v6 documentation go here: [CodeMirror v6 Documentation](https://code
 
 ```html
 <script>
-	import CodeMirror from 'codemirror-svelte-modules';
+  import CodeMirror from 'codemirror-svelte-modules';
 </script>
 
 <CodeMirror basicSetup />
@@ -42,9 +42,9 @@ More details on props and their types coming soon
 
 ```html
 <script>
-	import CodeMirror from 'codemirror-svelte-modules';
-	import { syntaxHighlighting, defaultHighlightStyle } from '@codemirror/language';
-	import { javascript } from '@codemirror/lang-javascript';
+  import CodeMirror from 'codemirror-svelte-modules'; 
+  import { syntaxHighlighting, defaultHighlightStyle } from '@codemirror/language';
+  import { javascript } from '@codemirror/lang-javascript';
 </script>
 
 <CodeMirror extensions={[javascript(), syntaxHighlighting(defaultHighlightStyle)]} />
