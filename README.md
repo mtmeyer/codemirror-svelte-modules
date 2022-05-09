@@ -1,38 +1,51 @@
-# create-svelte
+# CodeMirror Svelte Modules
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+This is a simple wrapper around Codemirror using their new architecture in v6.
 
-## Creating a project
+This library was heavily inspired by a similar React library [`@uiw/react-codemirror`](https://uiwjs.github.io/react-codemirror/)
 
-If you're seeing this, you've probably already done this step. Congrats!
+## CodeMirror Documentation
 
-```bash
-# create a new project in the current directory
-npm init svelte
+In version 6 CodeMirror only exports modules as described here: [CodeMirror v6 Guide](https://codemirror.net/6/docs/guide/)
 
-# create a new project in my-app
-npm init svelte my-app
+For all the v6 documentation go here: [CodeMirror v6 Documentation](https://codemirror.net/6/docs/)
+
+## Example
+
+```html
+<script>
+	import CodeMirror from 'codemirror-svelte-modules';
+</script>
+
+<CodeMirror basicSetup />
 ```
 
-## Developing
+### Props
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+More details on props and their types coming soon
 
-```bash
-npm run dev
+- extensions: `Extensions[]`
+- height: `string`
+- minHeight: `string`
+- maxHeight: `string`
+- width: `string`
+- minWidth: `string`
+- maxWidth: `string`
+- editable: `boolean`
+- readOnly: `boolean`
+- autoFocus: `boolean`
+- theme: `Extension`
+- basicSetup: `boolean`
+- initialValue: `string`
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+### Adding extensions
+
+```html
+<script>
+	import CodeMirror from 'codemirror-svelte-modules';
+	import { syntaxHighlighting, defaultHighlightStyle } from '@codemirror/language';
+	import { javascript } from '@codemirror/lang-javascript';
+</script>
+
+<CodeMirror extensions={[javascript(), syntaxHighlighting(defaultHighlightStyle)]} />
 ```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
