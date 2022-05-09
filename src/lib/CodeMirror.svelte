@@ -20,6 +20,9 @@
 	export let basicSetup = false;
 	export let initialValue = 'Hello world';
 
+	let classes = '';
+	export { classes as class };
+
 	let editorElement: HTMLDivElement;
 
 	const dispatch = createEventDispatcher();
@@ -75,6 +78,6 @@
 	});
 </script>
 
-<div bind:this={editorElement} style="height: 200px;" />
+<div bind:this={editorElement} class={classes} />
 
 <style></style>

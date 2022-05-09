@@ -1,7 +1,8 @@
 {
 	"name": "codemirror-svelte-modules",
-	"version": "0.0.5",
+	"version": "0.0.7",
 	"description": "Svelte wrapper for CodeMirror v6",
+	"types": "./CodeMirror.svelte.d.ts",
 	"scripts": {
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",
