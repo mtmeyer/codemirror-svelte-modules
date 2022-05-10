@@ -3,7 +3,8 @@ branches:
 
 plugins:
   - '@semantic-release/commit-analyzer'
-  - '@semantic-release/npm'
+  - - '@semantic-release/npm'
+    - pkgRoot: './package'
   - '@semantic-release/git'
   - - '@semantic-release/github'
     - assets:

@@ -24,8 +24,8 @@ jobs:
       - name: 📦  Create package
         run: npx svelte-kit package
 
-      - name: 🧭  Navigate to package directory
-        run: cd package
+      # - name: 🧭  Navigate to package directory
+      #   run: cd package
 
       - name: 🚀  Publish
         run: npm run release
