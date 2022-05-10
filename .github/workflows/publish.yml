@@ -11,20 +11,24 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: ⎔ Setup node
+      - name: 🏗  Setup node
         uses: actions/setup-node@v3
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org
           cache: npm
 
-      - name: 📥 Install deps
+      - name: 📥  Install deps
         uses: bahmutov/npm-install@v1
 
-      - name: 📦 Create package
+      - name: 📦  Create package
         run: npx svelte-kit package
 
-      - run: cd package
+      - name: 🧭  Navigate to package directory
+        run: cd package
 
-      - name: 🚀 Publish
-        run: npm run semantic-release
+      - name: 🚀  Publish
+        run: npm run release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
