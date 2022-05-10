@@ -45,10 +45,7 @@
     "@codemirror/theme-one-dark": "^0.20.0",
     "@codemirror/view": "^0.20.4"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mtmeyer/codemirror-svelte-modules.git"
-  },
+  "repository": "https://github.com/mtmeyer/codemirror-svelte-modules",
   "exports": {
     ".": "./CodeMirror.svelte"
   }
