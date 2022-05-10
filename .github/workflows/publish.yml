@@ -2,7 +2,8 @@ name: Publish to npm
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
 
 jobs:
   publish:
@@ -23,9 +24,6 @@ jobs:
 
       - name: 📦  Create package
         run: npx svelte-kit package
-
-      # - name: 🧭  Navigate to package directory
-      #   run: cd package
 
       - name: 🚀  Publish
         run: npm run release
