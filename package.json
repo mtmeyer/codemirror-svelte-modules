@@ -43,7 +43,8 @@
     "@codemirror/basic-setup": "^0.20.0",
     "@codemirror/state": "^0.20.0",
     "@codemirror/theme-one-dark": "^0.20.0",
-    "@codemirror/view": "^0.20.4"
+    "@codemirror/view": "^0.20.4",
+    "@semantic-release/changelog": "^6.0.1"
   },
   "repository": "https://github.com/mtmeyer/codemirror-svelte-modules",
   "exports": {
