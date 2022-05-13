@@ -19,6 +19,7 @@
 	export let theme = oneDark;
 	export let basicSetup = false;
 	export let initialValue = 'Hello world';
+	export let currentValue = initialValue;
 
 	let classes = '';
 	export { classes as class };
@@ -35,9 +36,13 @@
 
 	let updateListenerExtension = EditorView.updateListener.of((update) => {
 		if (update.docChanged) {
+			currentValue = update.state.doc.toString();
 			dispatch('change', update);
 		}
 	});
+
+	// try adding bind:value with below logic
+	// state.update({changes: {from: 0, to: state.doc.length, insert: "foobar"}})
 
 	const initialExtensions = () => {
 		let defaultExtensions = [
