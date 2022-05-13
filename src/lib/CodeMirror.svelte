@@ -84,5 +84,3 @@
 </script>
 
 <div bind:this={editorElement} class={classes} />
-
-<style></style>
