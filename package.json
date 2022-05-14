@@ -44,6 +44,7 @@
     "@codemirror/state": "^0.20.0",
     "@codemirror/theme-one-dark": "^0.20.0",
     "@codemirror/view": "^0.20.4",
+    "@microsoft/tsdoc": "^0.14.1",
     "@semantic-release/changelog": "^6.0.1"
   },
   "repository": "https://github.com/mtmeyer/codemirror-svelte-modules",
