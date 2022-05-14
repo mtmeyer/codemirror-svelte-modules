@@ -1,6 +1,5 @@
 <script lang="ts">
-	import CodeMirror from '../lib/CodeMirror.svelte';
-	let value = '';
+  import CodeMirror from '../lib/CodeMirror.svelte';
 </script>
 
 <h1>Welcome to SvelteKit</h1>
