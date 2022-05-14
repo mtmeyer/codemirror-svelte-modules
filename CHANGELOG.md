@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/mtmeyer/codemirror-svelte-modules/compare/v1.2.0...v1.3.0) (2022-05-14)
+
+
+### Features
+
+* added force update function ([c5f1b10](https://github.com/mtmeyer/codemirror-svelte-modules/commit/c5f1b1088608d40a618443bc59abebfac62ef427))
+
 # [1.2.0](https://github.com/mtmeyer/codemirror-svelte-modules/compare/v1.1.0...v1.2.0) (2022-05-14)
 
 
