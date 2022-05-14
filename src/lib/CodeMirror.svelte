@@ -1,10 +1,14 @@
 <script lang="ts">
 	import { onMount, createEventDispatcher } from 'svelte';
 	import { EditorState } from '@codemirror/state';
-	import type { Extension } from '@codemirror/state';
-	import { EditorView } from '@codemirror/view';
+	import type { Extension, EditorState as EditorStateType } from '@codemirror/state';
+	import { EditorView, placeholder as placeholderExtension } from '@codemirror/view';
+	import type { EditorView as EditorViewType } from '@codemirror/view';
 	import { oneDark } from '@codemirror/theme-one-dark';
 	import { basicSetup as basicSetupExtension } from '@codemirror/basic-setup';
+
+	let state: EditorStateType;
+	let view: EditorViewType;
 
 	export let extensions: Extension[] = [];
 	export let height = '';
@@ -18,8 +22,9 @@
 	export let autoFocus = false;
 	export let theme = oneDark;
 	export let basicSetup = false;
-	export let initialValue = 'Hello world';
+	export let initialValue = '';
 	export let currentValue = initialValue;
+	export let placeholder = '';
 
 	let classes = '';
 	export { classes as class };
@@ -27,9 +32,6 @@
 	let editorElement: HTMLDivElement;
 
 	const dispatch = createEventDispatcher();
-
-	let view;
-	let state;
 
 	const editableExtension = EditorView.editable.of(editable);
 	const readOnlyExtension = EditorState.readOnly.of(readOnly);
@@ -41,9 +43,6 @@
 		}
 	});
 
-	// try adding bind:value with below logic
-	// state.update({changes: {from: 0, to: state.doc.length, insert: "foobar"}})
-
 	const initialExtensions = () => {
 		let defaultExtensions = [
 			defaultThemeOption,
@@ -53,6 +52,7 @@
 			theme
 		];
 		if (basicSetup) defaultExtensions.push(basicSetupExtension);
+		if (placeholder) defaultExtensions.push(placeholderExtension(placeholder));
 
 		return defaultExtensions;
 	};
